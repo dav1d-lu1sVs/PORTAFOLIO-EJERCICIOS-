@@ -1,0 +1,23 @@
+
+#!/bin/bash
+# DavidLuis
+curso="7"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+echo "Cálculo de la hipotenusa de un triángulo rectángulo"
+echo
+
+# Pedir los catetos
+read -p "Introduce el valor del primer cateto (a): " a
+read -p "Introduce el valor del segundo cateto (b): " b
+
+# Calcular la hipotenusa con bc
+hipotenusa=$(echo "scale=2; sqrt($a*$a + $b*$b)" | bc)
+
+echo
+echo "La hipotenusa del triángulo es: $hipotenusa"

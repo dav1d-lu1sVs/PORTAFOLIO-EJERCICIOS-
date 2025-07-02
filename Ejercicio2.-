@@ -1,0 +1,11 @@
+#!/bin/bash
+# DavidLuis
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+read -p "¿Deseas continuar? (s/n): " respuesta
+respuesta=$(echo "$respuesta" | tr '[:upper:]' '[:lower:]')
+if [ "$respuesta" = "s" ]; then
+  echo "Has elegido continuar."
+else
+  echo "Has elegido no continuar."
+fi

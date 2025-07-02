@@ -1,18 +1,19 @@
-Ejercicio 1.-
-
-
 #!/bin/bash
 
 # VARIABLES
 mensaje="¡Hola, bienvenido al script de David!"
-mensaje=" Vamos a empezar"
+
+#Parametros
+echo"$mensaje"
+echo
 echo "El nombre del script es: $0"
 echo "El primer parametro es: $1"
 echo "El segundo parametro es: $2"
-# David
 echo "El numero total de parametros es: $#"
 echo "Todos los parametros como una sola palabra: $*"
 echo "Todos los parametros como una lista: $@"
+
+#DavidLuis
 read -p "Introduce tu nombre: " nombre
 echo "Hola, $nombre"
 read -p "Introduce un numero: " num1

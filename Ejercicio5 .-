@@ -1,0 +1,19 @@
+#!/bin/bash
+# DavidLuis
+curso="5"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+
+read -p "Introduce la distancia (en metros): " distancia
+read -p "Introduce el tiempo (en segundos): " tiempo
+
+
+velocidad=$(echo "scale=2; $distancia / $tiempo" | bc)
+
+echo "La velocidad de la particula es: $velocidad metros por segundo."
+

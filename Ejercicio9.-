@@ -1,0 +1,31 @@
+#!/bin/bash
+# DavidLuis
+curso="9"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+
+read -p "Ingresa un número mayor que 0: " num
+while [ "$num" -le 0 ]; do
+  echo "El número debe ser mayor que cero."
+  read -p "Intenta de nuevo: " num
+done
+echo
+echo "Números pares del 1 al $num:"
+
+cont=0
+
+# FOR para recorrer números
+for (( i=1; i<=num; i++ )); do
+  if (( i % 2 == 0 )); then
+    echo "$i"
+    contador=$((cont + 1))
+  fi
+done
+
+echo
+echo "Cantidad total de pares: $cont"

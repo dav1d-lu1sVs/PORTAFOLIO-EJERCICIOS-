@@ -1,0 +1,55 @@
+#!/bin/bash
+# DavidLuis
+curso="11"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+
+echo "¿Qué deseas calcular?"
+echo "1) Velocidad"
+echo "2) Distancia"
+echo "3) Tiempo"
+echo "4) Salir"
+echo
+
+read -p "Elige una opción (1-4): " opcion
+
+case $opcion in
+1)
+read -p "Introduce la distancia (en metros): " distancia
+read -p "Introduce el tiempo (en segundos): " tiempo
+if [ "$tiempo" == "0" ]; then
+echo "Error: El tiempo no puede ser cero."
+else
+velocidad=$(echo "scale=2; $distancia / $tiempo" | bc)
+echo "La velocidad es: $velocidad metros/segundo"
+fi
+;;
+2)
+read -p "Introduce la velocidad (en m/s): " velocidad
+read -p "Introduce el tiempo (en segundos): " tiempo
+
+distancia=$(echo "scale=2; $velocidad * $tiempo" | bc)
+echo "La distancia es: $distancia metros"
+;;
+3)
+read -p "Introduce la distancia (en metros): " distancia
+read -p "Introduce la velocidad (en m/s): " velocidad
+if [ "$velocidad" == "0" ]; then
+echo "Error: La velocidad no puede ser cero."
+else
+tiempo=$(echo "scale=2; $distancia / $velocidad" | bc)
+echo "El tiempo es: $tiempo segundos"
+fi
+;;
+4)
+echo "Saliendo del programa. ¡Hasta luego!"
+;;
+*)
+echo "Opción inválida. Debes elegir entre 1 y 4."
+;;
+esac

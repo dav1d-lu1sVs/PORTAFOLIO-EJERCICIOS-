@@ -1,0 +1,39 @@
+#!/bin/bash
+# DavidLuis
+curso="12"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+
+echo " Adivina el número (1-10)"
+continuar="S"
+while [[ "$continuar" == [Ss] ]]; do
+num=$(( RANDOM % 10 + 1 ))  # Número aleatorio entre 1 y 10
+int=3
+echo
+echo "Tienes 3 intentos para adivinar el número."
+while [ $int -gt 0 ]; do
+read -p "Adivina el número: " intento
+if ! [[ "$intento" =~ ^[0-9]+$ ]]; then
+echo "Por favor, introduce un número válido."
+continue
+fi
+if [ "$intento" -eq "$num" ]; then
+echo "¡Felicidades! ¡Adivinaste el número!"
+break
+else
+int=$((int - 1))
+if [ $int -gt 0 ]; then
+echo "Incorrecto. Te quedan $int intentos."
+else
+echo "Lo siento, se agotaron los intentos. El número era: $num"
+fi
+fi
+done
+read -p "¿Deseas jugar otra vez? (S/N): " continuar
+done
+echo "Gracias por jugar. ¡Hasta luego!"

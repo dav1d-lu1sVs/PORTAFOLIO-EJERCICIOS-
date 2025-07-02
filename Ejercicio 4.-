@@ -1,0 +1,23 @@
+#!/bin/bash
+# DavidLuis
+curso="4"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Este script es el número: $curso"
+echo
+
+read -p "Introduce tu edad (años): " edad
+read -p "Introduce tu peso (kg): " peso
+read -p "Introduce tu estatura (m): " estatura
+
+echo
+echo "Edad: $edad años."
+echo "Peso: $peso kg."
+echo "Altura: $estatura m."
+echo
+
+imc=$(echo "scale=2; $peso / ($estatura * $estatura)" | bc)
+echo "Tu índice de masa corporal (IMC) es: $imc"

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# DavidLuis
+curso="3"
+mensaje="¡Hola, bienvenido al script de David!"
+echo "$mensaje"
+echo
+
+echo "Nombre del script: $0"
+echo "Número total de parámetros: $#"
+echo "Este script es el número: $curso"
+
+read -p "Introduce tu nombre: " nombre
+read -p "Introduce tu edad: " edad
+read -p "Introduce tu número favorito: " num3
+
+
+echo "Hola $nombre, tienes $edad años."
+echo "Primer parámetro: $1"
+echo "Segundo parámetro: $2"
+echo "Tercer parámetro: $3"
+
+read -p "Introduce un número: " num1
+read -p "Introduce otro número: " num2
+
+suma=$((num1 + num2 + num3))
+
+echo "La suma de $num1 + $num2 + tu número favorito es: $suma"
+

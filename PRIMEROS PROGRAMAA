@@ -1,25 +1,22 @@
+Ejercicio 1.-
+
+
 #!/bin/bash
 
 # VARIABLES
 mensaje="¡Hola, bienvenido al script de David!"
-
-# PARÁMETROS
+mensaje=" Vamos a empezar"
 echo "El nombre del script es: $0"
-echo "El primer parámetro es: $1"
-echo "El segundo parámetro es: $2"
-
-# VARIABLES ESPECIALES
-echo "El número total de parámetros es: $#"
-echo "Todos los parámetros como una sola palabra: $*"
-echo "Todos los parámetros como una lista: $@"
-
-# COMANDO READ
+echo "El primer parametro es: $1"
+echo "El segundo parametro es: $2"
+# David
+echo "El numero total de parametros es: $#"
+echo "Todos los parametros como una sola palabra: $*"
+echo "Todos los parametros como una lista: $@"
 read -p "Introduce tu nombre: " nombre
 echo "Hola, $nombre"
-
-# EXPRESIÓN ARITMÉTICA
-read -p "Introduce un número: " num1
-read -p "Introduce otro número: " num2
+read -p "Introduce un numero: " num1
+read -p "Introduce otro numero: " num2
 suma=$((num1 + num2))
 echo "La suma de $num1 y $num2 es: $suma"
 
